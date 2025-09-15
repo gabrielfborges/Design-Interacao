@@ -4,9 +4,9 @@ let inputImg = document.getElementById('img');
 let previewImg = document.querySelector('.img-preview img');
 
 inputImg.addEventListener('change', function (event) {
-  const file = event.target.files[0];
+  let file = event.target.files[0];
   if (file) {
-    const reader = new FileReader();
+    let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function (e) {
       previewImg.src = e.target.result;
