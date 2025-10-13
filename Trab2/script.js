@@ -1,11 +1,11 @@
-const mainImageUrlInput = document.getElementById('main-img');
-const mainImagePreview = document.getElementById('main-image-preview');
+const imageInput = document.getElementById('main-img');
+const imagePreview = document.getElementById('main-image-preview');
 
 function updateMainImageFromUrl() {
-    mainImagePreview.src = mainImageUrlInput.value;
+    imagePreview.src = imageInput.value;
 }
 
-mainImageUrlInput.addEventListener('input', updateMainImageFromUrl);
+imageInput.addEventListener('input', updateMainImageFromUrl);
 
 let painel = document.querySelector("#painel");
 
@@ -133,9 +133,7 @@ salvarBtn.addEventListener('click', () => {
 
     try {
         localStorage.setItem('paginaGeradaHTML', htmlParaSalvar);
-        alert('Código HTML salvo com sucesso no LocalStorage!');
     } catch (e) {
-        alert('Erro ao salvar no LocalStorage. Memória cheia?');
         console.error(e);
     }
 });
@@ -151,10 +149,8 @@ carregarBtn.addEventListener('click', () => {
         codigoLocalStoragePre.textContent = htmlSalvo;
         loadedCodeArea.style.display = 'block';
 
-        alert('Código HTML carregado e exibido no preview e abaixo!');
 
     } else {
-        alert('Nenhum código HTML encontrado no LocalStorage.');
         loadedCodeArea.style.display = 'none';
         codigoLocalStoragePre.textContent = '';
     }
@@ -165,6 +161,5 @@ limparBtn.addEventListener('click', () => {
         localStorage.removeItem('paginaGeradaHTML');
         loadedCodeArea.style.display = 'none';
         codigoLocalStoragePre.textContent = '';
-        alert('LocalStorage limpo com sucesso!');
     }
 });
