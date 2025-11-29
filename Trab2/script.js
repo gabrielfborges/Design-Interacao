@@ -1,11 +1,11 @@
 const imageInput = document.getElementById('main-img');
 const imagePreview = document.getElementById('main-image-preview');
 
-function updateMainImageFromUrl() {
+function updateMainImage() {
     imagePreview.src = imageInput.value;
 }
 
-imageInput.addEventListener('input', updateMainImageFromUrl);
+imageInput.addEventListener('input', updateMainImage);
 
 let painel = document.querySelector("#painel");
 
@@ -73,7 +73,7 @@ footerTextColor.addEventListener('input', updateHeaderFooter);
 footerBgColor.addEventListener('input', updateHeaderFooter);
 
 updateHeaderFooter();
-updateMainImageFromUrl(); 
+updateMainImage(); 
 
 const salvarBtn = document.getElementById('salvar-codigo');
 const carregarBtn = document.getElementById('carregar-codigo');
@@ -127,7 +127,7 @@ function extractBodyContent(fullHtml) {
 
 salvarBtn.addEventListener('click', () => {
     updateHeaderFooter(); 
-    updateMainImageFromUrl();
+    updateMainImage();
     
     const htmlParaSalvar = gerarHTMLFinal(codigoGeradoDiv);
 
